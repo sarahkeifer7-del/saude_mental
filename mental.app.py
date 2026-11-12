@@ -146,9 +146,6 @@ st.markdown("""
 <br>
 """, unsafe_allow_html=True)
 
-</div>
-<br>
-""", unsafe_allow_html=True)
 
 
 # ---------------- MENU LATERAL ----------------
