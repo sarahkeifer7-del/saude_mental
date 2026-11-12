@@ -130,23 +130,18 @@ st.markdown("""
     text-align: center;
     color: white;
     border: 1px solid rgba(181, 106, 255, 0.8);
-    box-shadow:
-        0 0 18px rgba(120, 59, 255, 0.65),
-        0 0 38px rgba(67, 217, 232, 0.22);
+    box-shadow: 0 0 18px rgba(120, 59, 255, 0.65),
+                0 0 38px rgba(67, 217, 232, 0.22);
 ">
-    <h1 style="
-        color: white;
-        text-shadow: 0 0 15px rgba(255,255,255,0.5);
-    ">🌿 Mente Saudável</h1>
-
+    <h1 style="color: white; text-shadow: 0 0 15px rgba(255,255,255,0.5);">
+        🌿 Mente Saudável
+    </h1>
     <h3 style="color: #E0E7FF;">
         Compreendendo e Cuidando da Saúde Mental dos Jovens
     </h3>
 </div>
 <br>
 """, unsafe_allow_html=True)
-
-
 
 # ---------------- MENU LATERAL ----------------
 menu = st.sidebar.radio(
