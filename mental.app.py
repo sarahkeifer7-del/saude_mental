@@ -7,67 +7,149 @@ st.set_page_config(
     layout="wide"
 )
 
-# ---------------- ESTILO E CORES — FUNDO ESCURO ----------------
+
+
+# ---------------- ESTILO E CORES — NEON ROXO E AZUL ----------------
 st.markdown("""
 <style>
     .stApp {
-        background: linear-gradient(135deg, #1a1c2c 0%, #1e1e2f 50%, #1f2937 100%);
-        color: #f0f0f0;
+        background:
+            radial-gradient(circle at 15% 10%, rgba(120, 59, 255, 0.20), transparent 30%),
+            radial-gradient(circle at 85% 80%, rgba(67, 217, 232, 0.12), transparent 30%),
+            linear-gradient(135deg, #17152D 0%, #1B1935 50%, #101B35 100%);
+        color: #F5F1FF;
     }
+
+    [data-testid="stHeader"] {
+        background: rgba(23, 21, 45, 0.95);
+    }
+
     h1 {
-        color: #a78bfa;
+        color: #C7A5FF;
+        text-shadow: 0 0 12px rgba(181, 106, 255, 0.7);
     }
+
     h2 {
-        color: #c4b5ff;
+        color: #BFA0FF;
+        text-shadow: 0 0 8px rgba(120, 59, 255, 0.4);
     }
+
     h3 {
-        color: #93c5fd;
+        color: #71E8FF;
     }
+
     p, li, ul {
-        color: #e5e7eb;
+        color: #F0ECFF;
         font-size: 16px;
     }
+
     .card {
-        background-color: #2a2d3e;
+        background: linear-gradient(135deg, #30205C, #252B50);
         padding: 20px;
         border-radius: 16px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(181, 106, 255, 0.55);
+        box-shadow:
+            0 0 12px rgba(120, 59, 255, 0.25),
+            0 0 25px rgba(67, 217, 232, 0.10);
         margin-bottom: 20px;
-        border: 1px solid #3b3f5c;
+        transition: all 0.3s ease;
     }
+
+    .card:hover {
+        border-color: #B56AFF;
+        box-shadow:
+            0 0 18px rgba(181, 106, 255, 0.65),
+            0 0 35px rgba(67, 217, 232, 0.20);
+        transform: translateY(-4px);
+    }
+
     .quote {
-        background-color: #2e2b1f;
-        border-left: 5px solid #fbbf24;
+        background: linear-gradient(135deg, #30204F, #252B50);
+        border-left: 5px solid #43D9E8;
         padding: 15px;
         font-style: italic;
         border-radius: 8px;
-        color: #fef3c7;
+        color: #F5F1FF;
+        box-shadow: 0 0 12px rgba(67, 217, 232, 0.18);
     }
+
     .help-box {
-        background: linear-gradient(135deg, #1e3d34 0%, #1e2d3f 100%);
+        background: linear-gradient(135deg, #173C50, #25205A);
         padding: 25px;
         border-radius: 16px;
-        border: 2px solid #34d399;
-        color: #d1fae5;
+        border: 2px solid #43D9E8;
+        color: #E8FAFF;
+        box-shadow: 0 0 18px rgba(67, 217, 232, 0.30);
     }
+
     .help-box p, .help-box strong {
-        color: #d1fae5;
+        color: #E8FAFF;
     }
-    div[data-testid="stSidebar"] {
-        background-color: #25273c;
-        color: #e5e7eb;
+
+    /* MENU LATERAL */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #20163F, #152443);
+        border-right: 1px solid rgba(181, 106, 255, 0.5);
     }
+
+    [data-testid="stSidebar"] > div:first-child {
+        background: transparent;
+    }
+
+    [data-testid="stSidebar"] p,
+    [data-testid="stSidebar"] label,
+    [data-testid="stSidebar"] span {
+        color: #F5F1FF !important;
+    }
+
+    [data-testid="stSidebar"] [role="radiogroup"] label {
+        background: rgba(120, 59, 255, 0.10);
+        border: 1px solid rgba(181, 106, 255, 0.20);
+        border-radius: 10px;
+        padding: 8px;
+        margin-bottom: 5px;
+        transition: all 0.2s ease;
+    }
+
+    [data-testid="stSidebar"] [role="radiogroup"] label:hover {
+        background: rgba(120, 59, 255, 0.30);
+        border-color: #B56AFF;
+    }
+
 </style>
 """, unsafe_allow_html=True)
 
+
+
 # ---------------- CABEÇALHO ----------------
 st.markdown("""
-<div style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); padding: 30px; border-radius: 16px; text-align: center; color: white;">
-    <h1 style="color: white;">🌿 Mente Saudável</h1>
-    <h3 style="color: #e0e7ff;">Compreendendo e Cuidando da Saúde Mental dos Jovens</h3>
+<div style="
+    background: linear-gradient(120deg, #5B2CFF 0%, #783BFF 55%, #176BFF 100%);
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    color: white;
+    border: 1px solid rgba(181, 106, 255, 0.8);
+    box-shadow:
+        0 0 18px rgba(120, 59, 255, 0.65),
+        0 0 38px rgba(67, 217, 232, 0.22);
+">
+    <h1 style="
+        color: white;
+        text-shadow: 0 0 15px rgba(255,255,255,0.5);
+    ">🌿 Mente Saudável</h1>
+
+    <h3 style="color: #E0E7FF;">
+        Compreendendo e Cuidando da Saúde Mental dos Jovens
+    </h3>
 </div>
 <br>
 """, unsafe_allow_html=True)
+
+</div>
+<br>
+""", unsafe_allow_html=True)
+
 
 # ---------------- MENU LATERAL ----------------
 menu = st.sidebar.radio(
